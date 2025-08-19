@@ -4,6 +4,8 @@
   "package": "com.err0rw0lf.imint.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "ModdedBlocksMixin",
+    "CoralBlockBlockMixin"
   ],
   "client": [
   ],
