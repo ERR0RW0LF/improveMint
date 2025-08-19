@@ -15,6 +15,7 @@ import java.util.function.Function;
 public class ModItems {
     public static final Item MINT_LEAVE = register("mint_leave", Item::new, new Item.Settings());
 
+
     public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
         // Create the item key.
         RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Imint.MOD_ID, name));
