@@ -1,5 +1,6 @@
 package com.err0rw0lf.imint;
 
+import com.err0rw0lf.imint.block.ModBlocks;
 import com.err0rw0lf.imint.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
@@ -13,5 +14,6 @@ public class Imint implements ModInitializer {
     @Override
     public void onInitialize() {
         ModItems.registerModItems();
+        ModBlocks.registerModBlocks();
     }
 }
