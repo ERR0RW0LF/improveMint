@@ -121,3 +121,5 @@ runs/
 *.aseprite
 
 src/main/resources/assets/minecraft/
+
+src/main/resources/assets/temp/
