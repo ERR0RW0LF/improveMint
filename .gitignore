@@ -119,3 +119,5 @@ runs/
 !gradle-wrapper.jar
 
 *.aseprite
+
+src/main/resources/assets/minecraft/
