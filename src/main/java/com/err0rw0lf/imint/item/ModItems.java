@@ -4,6 +4,7 @@ import com.err0rw0lf.imint.Imint;
 import com.err0rw0lf.imint.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -58,6 +59,24 @@ public class ModItems {
     public static final Item LARGE_DEAD_HORN_CORAL_FAN = register(ModBlocks.LARGE_DEAD_HORN_CORAL_FAN,(BiFunction<Block, Item.Settings, Item>)((block, settings) -> new VerticallyAttachableBlockItem(block, ModBlocks.LARGE_DEAD_HORN_CORAL_WALL_FAN, Direction.DOWN, settings)));
 
 
+    public static final Item SMALL_DEAD_TUBE_CORAL_BLOCK = register(ModBlocks.SMALL_DEAD_TUBE_CORAL_BLOCK);
+    public static final Item SMALL_DEAD_BRAIN_CORAL_BLOCK = register(ModBlocks.SMALL_DEAD_BRAIN_CORAL_BLOCK);
+    public static final Item SMALL_DEAD_BUBBLE_CORAL_BLOCK = register(ModBlocks.SMALL_DEAD_BUBBLE_CORAL_BLOCK);
+    public static final Item SMALL_DEAD_FIRE_CORAL_BLOCK = register(ModBlocks.SMALL_DEAD_FIRE_CORAL_BLOCK);
+    public static final Item SMALL_DEAD_HORN_CORAL_BLOCK = register(ModBlocks.SMALL_DEAD_HORN_CORAL_BLOCK);
+
+    public static final Item MEDIUM_DEAD_TUBE_CORAL_BLOCK = register(ModBlocks.MEDIUM_DEAD_TUBE_CORAL_BLOCK);
+    public static final Item MEDIUM_DEAD_BRAIN_CORAL_BLOCK = register(ModBlocks.MEDIUM_DEAD_BRAIN_CORAL_BLOCK);
+    public static final Item MEDIUM_DEAD_BUBBLE_CORAL_BLOCK = register(ModBlocks.MEDIUM_DEAD_BUBBLE_CORAL_BLOCK);
+    public static final Item MEDIUM_DEAD_FIRE_CORAL_BLOCK = register(ModBlocks.MEDIUM_DEAD_FIRE_CORAL_BLOCK);
+    public static final Item MEDIUM_DEAD_HORN_CORAL_BLOCK = register(ModBlocks.MEDIUM_DEAD_HORN_CORAL_BLOCK);
+
+    public static final Item LARGE_DEAD_TUBE_CORAL_BLOCK = register(ModBlocks.LARGE_DEAD_TUBE_CORAL_BLOCK);
+    public static final Item LARGE_DEAD_BRAIN_CORAL_BLOCK = register(ModBlocks.LARGE_DEAD_BRAIN_CORAL_BLOCK);
+    public static final Item LARGE_DEAD_BUBBLE_CORAL_BLOCK = register(ModBlocks.LARGE_DEAD_BUBBLE_CORAL_BLOCK);
+    public static final Item LARGE_DEAD_FIRE_CORAL_BLOCK = register(ModBlocks.LARGE_DEAD_FIRE_CORAL_BLOCK);
+    public static final Item LARGE_DEAD_HORN_CORAL_BLOCK = register(ModBlocks.LARGE_DEAD_HORN_CORAL_BLOCK);
+
     private static Function<Item.Settings, Item> createBlockItemWithUniqueName(Block block) {
         return settings -> new BlockItem(block, settings.useItemPrefixedTranslationKey());
     }
@@ -90,6 +109,10 @@ public class ModItems {
         return Registry.register(Registries.ITEM, key, item);
     }
 
+    public static Item register(Block block) {
+        return register(block, BlockItem::new);
+    }
+
     public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
         // Create the item key.
         RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Imint.MOD_ID, name));
@@ -107,6 +130,93 @@ public class ModItems {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {
             entries.add(MINT_LEAVE);
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
+
+
+            entries.add(ModBlocks.SMALL_TUBE_CORAL);
+            entries.add(ModBlocks.MEDIUM_TUBE_CORAL);
+            entries.add(ModBlocks.LARGE_TUBE_CORAL);
+
+            entries.add(ModBlocks.SMALL_BRAIN_CORAL);
+            entries.add(ModBlocks.MEDIUM_BRAIN_CORAL);
+            entries.add(ModBlocks.LARGE_BRAIN_CORAL);
+            
+            entries.add(ModBlocks.SMALL_BUBBLE_CORAL);
+            entries.add(ModBlocks.MEDIUM_BUBBLE_CORAL);
+            entries.add(ModBlocks.LARGE_BUBBLE_CORAL);
+
+            entries.add(ModBlocks.SMALL_FIRE_CORAL);
+            entries.add(ModBlocks.MEDIUM_FIRE_CORAL);
+            entries.add(ModBlocks.LARGE_FIRE_CORAL);
+
+            entries.add(ModBlocks.SMALL_HORN_CORAL);
+            entries.add(ModBlocks.MEDIUM_HORN_CORAL);
+            entries.add(ModBlocks.LARGE_HORN_CORAL);
+
+            entries.add(ModBlocks.SMALL_DEAD_TUBE_CORAL);
+            entries.add(ModBlocks.MEDIUM_DEAD_TUBE_CORAL);
+            entries.add(ModBlocks.LARGE_DEAD_TUBE_CORAL);
+
+            entries.add(ModBlocks.SMALL_DEAD_BRAIN_CORAL);
+            entries.add(ModBlocks.MEDIUM_DEAD_BRAIN_CORAL);
+            entries.add(ModBlocks.LARGE_DEAD_BRAIN_CORAL);
+
+            entries.add(ModBlocks.SMALL_DEAD_BUBBLE_CORAL);
+            entries.add(ModBlocks.MEDIUM_DEAD_BUBBLE_CORAL);
+            entries.add(ModBlocks.LARGE_DEAD_BUBBLE_CORAL);
+
+            entries.add(ModBlocks.SMALL_DEAD_FIRE_CORAL);
+            entries.add(ModBlocks.MEDIUM_DEAD_FIRE_CORAL);
+            entries.add(ModBlocks.LARGE_DEAD_FIRE_CORAL);
+
+            entries.add(ModBlocks.SMALL_DEAD_HORN_CORAL);
+            entries.add(ModBlocks.MEDIUM_DEAD_HORN_CORAL);
+            entries.add(ModBlocks.LARGE_DEAD_HORN_CORAL);
+
+
+
+            entries.add(SMALL_TUBE_CORAL_FAN);
+            entries.add(MEDIUM_TUBE_CORAL_FAN);
+            entries.add(LARGE_TUBE_CORAL_FAN);
+
+            entries.add(SMALL_BRAIN_CORAL_FAN);
+            entries.add(MEDIUM_BRAIN_CORAL_FAN);
+            entries.add(LARGE_BRAIN_CORAL_FAN);
+
+            entries.add(SMALL_BUBBLE_CORAL_FAN);
+            entries.add(MEDIUM_BUBBLE_CORAL_FAN);
+            entries.add(LARGE_BUBBLE_CORAL_FAN);
+
+            entries.add(SMALL_FIRE_CORAL_FAN);
+            entries.add(MEDIUM_FIRE_CORAL_FAN);
+            entries.add(LARGE_FIRE_CORAL_FAN);
+
+            entries.add(SMALL_HORN_CORAL_FAN);
+            entries.add(MEDIUM_HORN_CORAL_FAN);
+            entries.add(LARGE_HORN_CORAL_FAN);
+
+            entries.add(SMALL_DEAD_TUBE_CORAL_FAN);
+            entries.add(MEDIUM_DEAD_TUBE_CORAL_FAN);
+            entries.add(LARGE_DEAD_TUBE_CORAL_FAN);
+
+            entries.add(SMALL_DEAD_BRAIN_CORAL_FAN);
+            entries.add(MEDIUM_DEAD_BRAIN_CORAL_FAN);
+            entries.add(LARGE_DEAD_BRAIN_CORAL_FAN);
+
+            entries.add(SMALL_DEAD_BUBBLE_CORAL_FAN);
+            entries.add(MEDIUM_DEAD_BUBBLE_CORAL_FAN);
+            entries.add(LARGE_DEAD_BUBBLE_CORAL_FAN);
+
+            entries.add(SMALL_DEAD_FIRE_CORAL_FAN);
+            entries.add(MEDIUM_DEAD_FIRE_CORAL_FAN);
+            entries.add(LARGE_DEAD_FIRE_CORAL_FAN);
+
+            entries.add(SMALL_DEAD_HORN_CORAL_FAN);
+            entries.add(MEDIUM_DEAD_HORN_CORAL_FAN);
+            entries.add(LARGE_DEAD_HORN_CORAL_FAN);
+
         });
     }
 }

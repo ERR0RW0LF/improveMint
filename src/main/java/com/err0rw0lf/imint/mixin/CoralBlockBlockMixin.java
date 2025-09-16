@@ -2,6 +2,7 @@
 package com.err0rw0lf.imint.mixin;
 
 
+import com.err0rw0lf.imint.block.ModBlocks;
 import net.minecraft.block.*;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.particle.ParticleTypes;
@@ -100,21 +101,167 @@ public abstract class CoralBlockBlockMixin extends Block {
             BlockPos blockPos = pos.offset(direction);
             BlockState blockState = world.getBlockState(blockPos);
             Block block = null;
-            if (canGrowIn(blockState)) {
-                block = Blocks.SMALL_AMETHYST_BUD;
-            } else if (blockState.isOf(Blocks.SMALL_AMETHYST_BUD) && blockState.get(AmethystClusterBlock.FACING) == direction) {
-                block = Blocks.MEDIUM_AMETHYST_BUD;
-            } else if (blockState.isOf(Blocks.MEDIUM_AMETHYST_BUD) && blockState.get(AmethystClusterBlock.FACING) == direction) {
-                block = Blocks.LARGE_AMETHYST_BUD;
-            } else if (blockState.isOf(Blocks.LARGE_AMETHYST_BUD) && blockState.get(AmethystClusterBlock.FACING) == direction) {
-                block = Blocks.AMETHYST_CLUSTER;
+            if (direction != Direction.DOWN) {
+                if (canGrowIn(blockState)) {
+                    if (direction == Direction.UP) {
+                        int type = random.nextInt(10);
+                        if (type == 0) {
+                            block = ModBlocks.SMALL_BRAIN_CORAL;
+                        } else if (type == 1) {
+                            block = ModBlocks.SMALL_BUBBLE_CORAL;
+                        } else if (type == 2) {
+                            block = ModBlocks.SMALL_FIRE_CORAL;
+                        } else if (type == 3) {
+                            block = ModBlocks.SMALL_HORN_CORAL;
+                        } else if (type == 4) {
+                            block = ModBlocks.SMALL_TUBE_CORAL;
+                        } else if (type == 5) {
+                            block = ModBlocks.SMALL_BRAIN_CORAL_FAN;
+                        } else if (type == 6) {
+                            block = ModBlocks.SMALL_BUBBLE_CORAL_FAN;
+                        } else if (type == 7) {
+                            block = ModBlocks.SMALL_FIRE_CORAL_FAN;
+                        } else if (type == 8) {
+                            block = ModBlocks.SMALL_HORN_CORAL_FAN;
+                        } else if (type == 9) {
+                            block = ModBlocks.SMALL_TUBE_CORAL_FAN;
+                        }
+                    } else {
+                        //block = Blocks.SMALL_AMETHYST_BUD;
+                        int type = random.nextInt(5);
+                        if (type == 0) {
+                            block = ModBlocks.SMALL_BRAIN_CORAL_WALL_FAN;
+                        } else if (type == 1) {
+                            block = ModBlocks.SMALL_BUBBLE_CORAL_WALL_FAN;
+                        } else if (type == 2) {
+                            block = ModBlocks.SMALL_FIRE_CORAL_WALL_FAN;
+                        } else if (type == 3) {
+                            block = ModBlocks.SMALL_HORN_CORAL_WALL_FAN;
+                        } else if (type == 4) {
+                            block = ModBlocks.SMALL_TUBE_CORAL_WALL_FAN;
+                        }
+                    }
+                    //LOGGER.info("Random Type: " + type);
+                    LOGGER.info("Direction: " + direction);
+                } else if (blockState.isOf(Blocks.SMALL_AMETHYST_BUD) && blockState.get(AmethystClusterBlock.FACING) == direction) {
+                    block = Blocks.MEDIUM_AMETHYST_BUD;
+                } else if (blockState.isOf(Blocks.MEDIUM_AMETHYST_BUD) && blockState.get(AmethystClusterBlock.FACING) == direction) {
+                    block = Blocks.LARGE_AMETHYST_BUD;
+                } else if (blockState.isOf(Blocks.LARGE_AMETHYST_BUD) && blockState.get(AmethystClusterBlock.FACING) == direction) {
+                    block = Blocks.AMETHYST_CLUSTER;
+                } else if (blockState.isOf(ModBlocks.SMALL_BRAIN_CORAL) && direction == Direction.UP) {
+                    block = ModBlocks.MEDIUM_BRAIN_CORAL;
+                } else if (blockState.isOf(ModBlocks.MEDIUM_BRAIN_CORAL) && direction == Direction.UP) {
+                    block = ModBlocks.LARGE_BRAIN_CORAL;
+                } else if (blockState.isOf(ModBlocks.LARGE_BRAIN_CORAL) && direction == Direction.UP) {
+                    block = Blocks.BRAIN_CORAL;
+                } else if (blockState.isOf(ModBlocks.SMALL_BUBBLE_CORAL) && direction == Direction.UP) {
+                    block = ModBlocks.MEDIUM_BUBBLE_CORAL;
+                } else if (blockState.isOf(ModBlocks.MEDIUM_BUBBLE_CORAL) && direction == Direction.UP) {
+                    block = ModBlocks.LARGE_BUBBLE_CORAL;
+                } else if (blockState.isOf(ModBlocks.LARGE_BUBBLE_CORAL) && direction == Direction.UP) {
+                    block = Blocks.BUBBLE_CORAL;
+                } else if (blockState.isOf(ModBlocks.SMALL_TUBE_CORAL) && direction == Direction.UP) {
+                    block = ModBlocks.MEDIUM_TUBE_CORAL;
+                } else if (blockState.isOf(ModBlocks.MEDIUM_TUBE_CORAL) && direction == Direction.UP) {
+                    block = ModBlocks.LARGE_TUBE_CORAL;
+                } else if (blockState.isOf(ModBlocks.LARGE_TUBE_CORAL) && direction == Direction.UP) {
+                    block = Blocks.TUBE_CORAL;
+                } else if (blockState.isOf(ModBlocks.SMALL_FIRE_CORAL) && direction == Direction.UP) {
+                    block = ModBlocks.MEDIUM_FIRE_CORAL;
+                } else if (blockState.isOf(ModBlocks.MEDIUM_FIRE_CORAL) && direction == Direction.UP) {
+                    block = ModBlocks.LARGE_FIRE_CORAL;
+                } else if (blockState.isOf(ModBlocks.LARGE_FIRE_CORAL) && direction == Direction.UP) {
+                    block = Blocks.FIRE_CORAL;
+                } else if (blockState.isOf(ModBlocks.SMALL_HORN_CORAL) && direction == Direction.UP) {
+                    block = ModBlocks.MEDIUM_HORN_CORAL;
+                } else if (blockState.isOf(ModBlocks.MEDIUM_HORN_CORAL) && direction == Direction.UP) {
+                    block = ModBlocks.LARGE_HORN_CORAL;
+                } else if (blockState.isOf(ModBlocks.LARGE_HORN_CORAL) && direction == Direction.UP) {
+                    block = Blocks.HORN_CORAL; // TODO
+                } else if (blockState.isOf(ModBlocks.SMALL_BRAIN_CORAL_FAN) && direction == Direction.UP) {
+                    block = ModBlocks.MEDIUM_BRAIN_CORAL_FAN;
+                } else if (blockState.isOf(ModBlocks.MEDIUM_BRAIN_CORAL_FAN) && direction == Direction.UP) {
+                    block = ModBlocks.LARGE_BRAIN_CORAL_FAN;
+                } else if (blockState.isOf(ModBlocks.LARGE_BRAIN_CORAL_FAN) && direction == Direction.UP) {
+                    block = Blocks.BRAIN_CORAL_FAN;
+                } else if (blockState.isOf(ModBlocks.SMALL_BUBBLE_CORAL_FAN) && direction == Direction.UP) {
+                    block = ModBlocks.MEDIUM_BUBBLE_CORAL_FAN;
+                } else if (blockState.isOf(ModBlocks.MEDIUM_BUBBLE_CORAL_FAN) && direction == Direction.UP) {
+                    block = ModBlocks.LARGE_BUBBLE_CORAL_FAN;
+                } else if (blockState.isOf(ModBlocks.LARGE_BUBBLE_CORAL_FAN) && direction == Direction.UP) {
+                    block = Blocks.BUBBLE_CORAL_FAN;
+                } else if (blockState.isOf(ModBlocks.SMALL_TUBE_CORAL_FAN) && direction == Direction.UP) {
+                    block = ModBlocks.MEDIUM_TUBE_CORAL_FAN;
+                } else if (blockState.isOf(ModBlocks.MEDIUM_TUBE_CORAL_FAN) && direction == Direction.UP) {
+                    block = ModBlocks.LARGE_TUBE_CORAL_FAN;
+                } else if (blockState.isOf(ModBlocks.LARGE_TUBE_CORAL_FAN) && direction == Direction.UP) {
+                    block = Blocks.TUBE_CORAL_FAN;
+                } else if (blockState.isOf(ModBlocks.SMALL_FIRE_CORAL_FAN) && direction == Direction.UP) {
+                    block = ModBlocks.MEDIUM_FIRE_CORAL_FAN;
+                } else if (blockState.isOf(ModBlocks.MEDIUM_FIRE_CORAL_FAN) && direction == Direction.UP) {
+                    block = ModBlocks.LARGE_FIRE_CORAL_FAN;
+                } else if (blockState.isOf(ModBlocks.LARGE_FIRE_CORAL_FAN) && direction == Direction.UP) {
+                    block = Blocks.FIRE_CORAL_FAN;
+                } else if (blockState.isOf(ModBlocks.SMALL_HORN_CORAL_FAN) && direction == Direction.UP) {
+                    block = ModBlocks.MEDIUM_HORN_CORAL_FAN;
+                } else if (blockState.isOf(ModBlocks.MEDIUM_HORN_CORAL_FAN) && direction == Direction.UP) {
+                    block = ModBlocks.LARGE_HORN_CORAL_FAN;
+                } else if (blockState.isOf(ModBlocks.LARGE_HORN_CORAL_FAN) && direction == Direction.UP) {
+                    block = Blocks.HORN_CORAL_FAN; // TODO
+                } else if (blockState.isOf(ModBlocks.SMALL_BRAIN_CORAL_WALL_FAN) && blockState.get(CoralWallFanBlock.FACING) == direction) {
+                    block = ModBlocks.MEDIUM_BRAIN_CORAL_WALL_FAN;
+                } else if (blockState.isOf(ModBlocks.MEDIUM_BRAIN_CORAL_WALL_FAN) && blockState.get(CoralWallFanBlock.FACING) == direction) {
+                    block = ModBlocks.LARGE_BRAIN_CORAL_WALL_FAN;
+                } else if (blockState.isOf(ModBlocks.LARGE_BRAIN_CORAL_WALL_FAN) && blockState.get(CoralWallFanBlock.FACING) == direction) {
+                    block = Blocks.BRAIN_CORAL_WALL_FAN;
+                } else if (blockState.isOf(ModBlocks.SMALL_BUBBLE_CORAL_WALL_FAN) && blockState.get(CoralWallFanBlock.FACING) == direction) {
+                    block = ModBlocks.MEDIUM_BUBBLE_CORAL_WALL_FAN;
+                } else if (blockState.isOf(ModBlocks.MEDIUM_BUBBLE_CORAL_WALL_FAN) && blockState.get(CoralWallFanBlock.FACING) == direction) {
+                    block = ModBlocks.LARGE_BUBBLE_CORAL_WALL_FAN;
+                } else if (blockState.isOf(ModBlocks.LARGE_BUBBLE_CORAL_WALL_FAN) && blockState.get(CoralWallFanBlock.FACING) == direction) {
+                    block = Blocks.BUBBLE_CORAL_WALL_FAN;
+                } else if (blockState.isOf(ModBlocks.SMALL_TUBE_CORAL_WALL_FAN) && blockState.get(CoralWallFanBlock.FACING) == direction) {
+                    block = ModBlocks.MEDIUM_TUBE_CORAL_WALL_FAN;
+                } else if (blockState.isOf(ModBlocks.MEDIUM_TUBE_CORAL_WALL_FAN) && blockState.get(CoralWallFanBlock.FACING) == direction) {
+                    block = ModBlocks.LARGE_TUBE_CORAL_WALL_FAN;
+                } else if (blockState.isOf(ModBlocks.LARGE_TUBE_CORAL_WALL_FAN) && blockState.get(CoralWallFanBlock.FACING) == direction) {
+                    block = Blocks.TUBE_CORAL_WALL_FAN;
+                } else if (blockState.isOf(ModBlocks.SMALL_FIRE_CORAL_WALL_FAN) && blockState.get(CoralWallFanBlock.FACING) == direction) {
+                    block = ModBlocks.MEDIUM_FIRE_CORAL_WALL_FAN;
+                } else if (blockState.isOf(ModBlocks.MEDIUM_FIRE_CORAL_WALL_FAN) && blockState.get(CoralWallFanBlock.FACING) == direction) {
+                    block = ModBlocks.LARGE_FIRE_CORAL_WALL_FAN;
+                } else if (blockState.isOf(ModBlocks.LARGE_FIRE_CORAL_WALL_FAN) && blockState.get(CoralWallFanBlock.FACING) == direction) {
+                    block = Blocks.FIRE_CORAL_WALL_FAN;
+                } else if (blockState.isOf(ModBlocks.SMALL_HORN_CORAL_WALL_FAN) && blockState.get(CoralWallFanBlock.FACING) == direction) {
+                    block = ModBlocks.MEDIUM_HORN_CORAL_WALL_FAN;
+                } else if (blockState.isOf(ModBlocks.MEDIUM_HORN_CORAL_WALL_FAN) && blockState.get(CoralWallFanBlock.FACING) == direction) {
+                    block = ModBlocks.LARGE_HORN_CORAL_WALL_FAN;
+                } else if (blockState.isOf(ModBlocks.LARGE_HORN_CORAL_WALL_FAN) && blockState.get(CoralWallFanBlock.FACING) == direction) {
+                    block = Blocks.HORN_CORAL_WALL_FAN;
+                } 
             }
 
             if (block != null) {
-                BlockState blockState2 = block.getDefaultState()
-                        .with(AmethystClusterBlock.FACING, direction)
-                        .with(AmethystClusterBlock.WATERLOGGED, blockState.getFluidState().getFluid() == Fluids.WATER);
-                world.setBlockState(blockPos, blockState2);
+                if (block.getClass() == AmethystClusterBlock.class) {
+                    BlockState blockState2 = block.getDefaultState()
+                            .with(AmethystClusterBlock.FACING, direction)
+                            .with(AmethystClusterBlock.WATERLOGGED, blockState.getFluidState().getFluid() == Fluids.WATER);
+                    world.setBlockState(blockPos, blockState2);
+                } else if (block.getClass() == CoralBlock.class) {
+                    BlockState blockState2 = block.getDefaultState()
+                            .with(CoralBlock.WATERLOGGED, blockState.getFluidState().getFluid() == Fluids.WATER);
+                    world.setBlockState(blockPos, blockState2);
+                } else if (block.getClass() == CoralFanBlock.class) {
+                    BlockState blockState2 = block.getDefaultState()
+                            .with(CoralFanBlock.WATERLOGGED, blockState.getFluidState().getFluid() == Fluids.WATER);
+                    world.setBlockState(blockPos, blockState2);
+                } else if (block.getClass() == CoralWallFanBlock.class) {
+                    BlockState blockState2 = block.getDefaultState()
+                            .with(CoralWallFanBlock.FACING, direction)
+                            .with(CoralWallFanBlock.WATERLOGGED, blockState.getFluidState().getFluid() == Fluids.WATER);
+                    world.setBlockState(blockPos, blockState2);
+                }
             }
         }
     }

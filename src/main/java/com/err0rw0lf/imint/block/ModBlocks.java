@@ -428,6 +428,72 @@ public class ModBlocks {
             false);
 
 
+    public static final Block SMALL_DEAD_TUBE_CORAL_BLOCK = register("small_dead_tube_coral_block",AbstractBlock.Settings.create().mapColor(MapColor.GRAY).solid().instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F));
+    public static final Block SMALL_DEAD_BRAIN_CORAL_BLOCK = register("small_dead_brain_coral_block",AbstractBlock.Settings.create().mapColor(MapColor.GRAY).solid().instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F));
+    public static final Block SMALL_DEAD_BUBBLE_CORAL_BLOCK = register("small_dead_bubble_coral_block",AbstractBlock.Settings.create().mapColor(MapColor.GRAY).solid().instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F));
+    public static final Block SMALL_DEAD_FIRE_CORAL_BLOCK = register("small_dead_fire_coral_block",AbstractBlock.Settings.create().mapColor(MapColor.GRAY).solid().instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F));
+    public static final Block SMALL_DEAD_HORN_CORAL_BLOCK = register("small_dead_horn_coral_block",AbstractBlock.Settings.create().mapColor(MapColor.GRAY).solid().instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F));
+    public static final Block SMALL_TUBE_CORAL_BLOCK = register("small_tube_coral_block",settings -> new CoralBlockBlock(SMALL_DEAD_TUBE_CORAL_BLOCK, settings),AbstractBlock.Settings.create().mapColor(MapColor.BLUE).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.CORAL),true);
+    public static final Block SMALL_BRAIN_CORAL_BLOCK = register("small_brain_coral_block",settings -> new CoralBlockBlock(SMALL_DEAD_BRAIN_CORAL_BLOCK, settings),AbstractBlock.Settings.create().mapColor(MapColor.PINK).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.CORAL),true);
+    public static final Block SMALL_BUBBLE_CORAL_BLOCK = register("small_bubble_coral_block",settings -> new CoralBlockBlock(SMALL_DEAD_BUBBLE_CORAL_BLOCK, settings),AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.CORAL),true);
+    public static final Block SMALL_FIRE_CORAL_BLOCK = register("small_fire_coral_block",settings -> new CoralBlockBlock(SMALL_DEAD_FIRE_CORAL_BLOCK, settings),AbstractBlock.Settings.create().mapColor(MapColor.RED).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.CORAL),true);
+    public static final Block SMALL_HORN_CORAL_BLOCK = register("small_horn_coral_block",settings -> new CoralBlockBlock(SMALL_DEAD_HORN_CORAL_BLOCK, settings),AbstractBlock.Settings.create().mapColor(MapColor.YELLOW).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.CORAL),true);
+
+    public static final Block MEDIUM_DEAD_TUBE_CORAL_BLOCK = register("medium_dead_tube_coral_block",AbstractBlock.Settings.create().mapColor(MapColor.GRAY).solid().instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F));
+    public static final Block MEDIUM_DEAD_BRAIN_CORAL_BLOCK = register("medium_dead_brain_coral_block",AbstractBlock.Settings.create().mapColor(MapColor.GRAY).solid().instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F));
+    public static final Block MEDIUM_DEAD_BUBBLE_CORAL_BLOCK = register("medium_dead_bubble_coral_block",AbstractBlock.Settings.create().mapColor(MapColor.GRAY).solid().instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F));
+    public static final Block MEDIUM_DEAD_FIRE_CORAL_BLOCK = register("medium_dead_fire_coral_block",AbstractBlock.Settings.create().mapColor(MapColor.GRAY).solid().instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F));
+    public static final Block MEDIUM_DEAD_HORN_CORAL_BLOCK = register("medium_dead_horn_coral_block",AbstractBlock.Settings.create().mapColor(MapColor.GRAY).solid().instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F));
+    public static final Block MEDIUM_TUBE_CORAL_BLOCK = register("medium_tube_coral_block",settings -> new CoralBlockBlock(MEDIUM_DEAD_TUBE_CORAL_BLOCK, settings),AbstractBlock.Settings.create().mapColor(MapColor.BLUE).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.CORAL),true);
+    public static final Block MEDIUM_BRAIN_CORAL_BLOCK = register("medium_brain_coral_block",settings -> new CoralBlockBlock(MEDIUM_DEAD_BRAIN_CORAL_BLOCK, settings),AbstractBlock.Settings.create().mapColor(MapColor.PINK).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.CORAL),true);
+    public static final Block MEDIUM_BUBBLE_CORAL_BLOCK = register("medium_bubble_coral_block",settings -> new CoralBlockBlock(MEDIUM_DEAD_BUBBLE_CORAL_BLOCK, settings),AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.CORAL),true);
+    public static final Block MEDIUM_FIRE_CORAL_BLOCK = register("medium_fire_coral_block",settings -> new CoralBlockBlock(MEDIUM_DEAD_FIRE_CORAL_BLOCK, settings),AbstractBlock.Settings.create().mapColor(MapColor.RED).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.CORAL),true);
+    public static final Block MEDIUM_HORN_CORAL_BLOCK = register("medium_horn_coral_block",settings -> new CoralBlockBlock(MEDIUM_DEAD_HORN_CORAL_BLOCK, settings),AbstractBlock.Settings.create().mapColor(MapColor.YELLOW).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.CORAL),true);
+
+    public static final Block LARGE_DEAD_TUBE_CORAL_BLOCK = register("large_dead_tube_coral_block",AbstractBlock.Settings.create().mapColor(MapColor.GRAY).solid().instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F));
+    public static final Block LARGE_DEAD_BRAIN_CORAL_BLOCK = register("large_dead_brain_coral_block",AbstractBlock.Settings.create().mapColor(MapColor.GRAY).solid().instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F));
+    public static final Block LARGE_DEAD_BUBBLE_CORAL_BLOCK = register("large_dead_bubble_coral_block",AbstractBlock.Settings.create().mapColor(MapColor.GRAY).solid().instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F));
+    public static final Block LARGE_DEAD_FIRE_CORAL_BLOCK = register("large_dead_fire_coral_block",AbstractBlock.Settings.create().mapColor(MapColor.GRAY).solid().instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F));
+    public static final Block LARGE_DEAD_HORN_CORAL_BLOCK = register("large_dead_horn_coral_block",AbstractBlock.Settings.create().mapColor(MapColor.GRAY).solid().instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F));
+    public static final Block LARGE_TUBE_CORAL_BLOCK = register("large_tube_coral_block",settings -> new CoralBlockBlock(LARGE_DEAD_TUBE_CORAL_BLOCK, settings),AbstractBlock.Settings.create().mapColor(MapColor.BLUE).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.CORAL),true);
+    public static final Block LARGE_BRAIN_CORAL_BLOCK = register("large_brain_coral_block",settings -> new CoralBlockBlock(LARGE_DEAD_BRAIN_CORAL_BLOCK, settings),AbstractBlock.Settings.create().mapColor(MapColor.PINK).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.CORAL),true);
+    public static final Block LARGE_BUBBLE_CORAL_BLOCK = register("large_bubble_coral_block",settings -> new CoralBlockBlock(LARGE_DEAD_BUBBLE_CORAL_BLOCK, settings),AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.CORAL),true);
+    public static final Block LARGE_FIRE_CORAL_BLOCK = register("large_fire_coral_block",settings -> new CoralBlockBlock(LARGE_DEAD_FIRE_CORAL_BLOCK, settings),AbstractBlock.Settings.create().mapColor(MapColor.RED).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.CORAL),true);
+    public static final Block LARGE_HORN_CORAL_BLOCK = register("large_horn_coral_block",settings -> new CoralBlockBlock(LARGE_DEAD_HORN_CORAL_BLOCK, settings),AbstractBlock.Settings.create().mapColor(MapColor.YELLOW).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).sounds(BlockSoundGroup.CORAL),true);
+
+
+
+
+
+    public static Block register(RegistryKey<Block> key, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
+        Block block = (Block)factory.apply(settings.registryKey(key));
+        return Registry.register(Registries.BLOCK, key, block);
+    }
+
+    public static Block register(RegistryKey<Block> key, AbstractBlock.Settings settings) {
+        return register(key, Block::new, settings);
+    }
+
+    private static RegistryKey<Block> keyOf(String id) {
+        return RegistryKey.of(RegistryKeys.BLOCK, Identifier.ofVanilla(id));
+    }
+
+    private static Block register(String id, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
+        return register(keyOf(id), factory, settings);
+    }
+
+    private static Block register(String id, AbstractBlock.Settings settings) {
+        return register(id, Block::new, settings);
+    }
+
+    static {
+        for (Block block : Registries.BLOCK) {
+            for (BlockState blockState : block.getStateManager().getStates()) {
+                Block.STATE_IDS.add(blockState);
+                blockState.initShapeCache();
+            }
+        }
+    }
 
     private static Block register(String name, Function<AbstractBlock.Settings, Block> blockFactory, AbstractBlock.Settings settings, boolean shouldRegisterItem) {
         // Create a registry key for the block

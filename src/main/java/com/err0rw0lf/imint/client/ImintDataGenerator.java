@@ -9,5 +9,6 @@ public class ImintDataGenerator implements DataGeneratorEntrypoint {
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
         pack.addProvider(ImintRecipeProvider::new);
+        pack.addProvider(ImintModelProvider::new);
     }
 }
